@@ -81,7 +81,6 @@ export default {
                         }
                     }
                 );
-                console.log(result)
 
                 window.open(
                     url, 
@@ -100,8 +99,6 @@ export default {
                 if(!data.ticket_title_image){
                     data.ticket_title_image = placeholderImg
                 }
-
-                console.log(data)
 
                 this.img = data.ticket_title_image;
                 this.title = data.ticket_title;

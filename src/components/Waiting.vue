@@ -1,6 +1,6 @@
 <template>
     <div class="waiting-container">
-        <h1>예매 페이지</h1>
+        <h1>서비스 접속 대기중</h1>
         <p>대기번호 : <span>{{ queueCount }}</span>명</p>
     </div>
 </template>
@@ -11,7 +11,7 @@ import axios from 'axios';
 export default {
     data() {
         return {
-        queueCount: '', // 시작 대기 인원
+        queueCount: null, // 시작 대기 인원
         timer: null
         }
     },
@@ -32,6 +32,10 @@ export default {
                 }
             }
         );
+
+        if(res.status == 200){
+            this.queueCount = res.data.data
+        }
 
         if (res.status == 302) {
             this.completeWaiting(ticket_idx);
