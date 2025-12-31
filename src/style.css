@@ -1,0 +1,14 @@
+/* 모든 기본 여백 제거 */
+html, body {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+}
+  
+#app {
+    margin: 0;
+    padding: 0;
+    max-width: none; /* Vite 기본 설정에서 width를 제한하는 경우가 있음 */
+    text-align: left;
+}
