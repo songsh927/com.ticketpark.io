@@ -23,7 +23,7 @@ jobs:
 
       - name: Create env
         run:
-          echo "VITE_API_BASE=${{ secrets.VITE_API_BASEURL }}" > .env
+          echo "VITE_API_BASEURL=${{ secrets.VITE_API_BASEURL }}" > .env
 
       - name: Build
         run: npm run build
@@ -48,7 +48,7 @@ jobs:
           script:
             set -e
             sudo rm -rf /var/www/ticketpark/*
-            sudo cp -r /tmp/ticketpark/dist/* /var/www/ticketpark/
+            sudo cp -r /tmp/ticketpark/dist/dist/* /var/www/ticketpark/
             sudo rm -rf /tmp/ticketpark/dist
             sudo nginx -t
             sudo systemctl reload nginx
