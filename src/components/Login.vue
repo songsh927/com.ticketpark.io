@@ -33,7 +33,7 @@
           
           <div class="divider"></div>
           
-          <button type="button" class="signup-btn" @click="$router.push({ name: 'Join' })">회원가입</button>
+          <button type="button" class="signup-btn" @click="goToJoinPage">회원가입</button>
         </form>
   
         <footer class="login-footer">
@@ -73,6 +73,9 @@ export default {
             }
 
             
+        },
+        goToJoinPage(){
+            this.$router.push('/join')
         }
     },
     mounted(){
